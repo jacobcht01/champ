@@ -1,44 +1,18 @@
-// 1️⃣ Load Google Analytics (gtag.js) in <head>
+// 1️⃣ Insert Google Tag Manager script inside <head>
 (function() {
-    var gtagScript = document.createElement("script");
-    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-ZSHBXW4HYV";
-    gtagScript.async = true;
-    document.head.appendChild(gtagScript);
-
-    // 2️⃣ Ensure gtag is initialized after script loads
-    gtagScript.onload = function() {
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        window.gtag = gtag; // Make gtag globally accessible
-
-        gtag('js', new Date());
-        gtag('config', 'G-ZSHBXW4HYV');
-    };
+    var gtmScript = document.createElement("script");
+    gtmScript.innerHTML = `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-PN32VHXR');`;
+    document.head.appendChild(gtmScript);
 })();
 
-// 3️⃣ Load Conversion Tracking Code in <body>
+// 2️⃣ Insert Google Tag Manager noscript inside <body>
 document.addEventListener("DOMContentLoaded", function() {
-    var conversionScript = document.createElement("script");
-    conversionScript.type = "text/javascript";
-    conversionScript.innerHTML = `
-        function gtag_report_conversion(url) {
-            var callback = function () {
-                if (typeof url !== 'undefined') {
-                    window.location = url;
-                }
-            };
-            if (typeof gtag !== 'undefined') {
-                gtag('event', 'conversion', {
-                    'send_to': 'AW-16846923210/ppQfCMv8-JsaEMrLnuE-',
-                    'value': 1.0,
-                    'currency': 'INR',
-                    'event_callback': callback
-                });
-            } else {
-                console.error("gtag not loaded yet.");
-            }
-            return false;
-        }
-    `;
-    document.body.appendChild(conversionScript);
+    var gtmNoScript = document.createElement("noscript");
+    gtmNoScript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN32VHXR"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
+    document.body.insertBefore(gtmNoScript, document.body.firstChild);
 });

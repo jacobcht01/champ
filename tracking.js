@@ -9,17 +9,17 @@ script.onload = function() {
   console.log("Google Ads tracking script loaded.");
   
   // Define conversion tracking function only after the script loads
-  window.gtag_report_conversion = function(url) {
+  function gtag_report_conversion(url) {
     var callback = function () {
-      if (typeof url !== 'undefined') {
+      if (typeof(url) != 'undefined') {
         window.location = url;
       }
     };
     gtag('event', 'conversion', {
-      'send_to': 'AW-16846923210/ppQfCMv8-JsaEMrLnuE-',
-      'value': 1.0,
-      'currency': 'INR',
-      'event_callback': callback
+        'send_to': 'AW-16846923210/ppQfCMv8-JsaEMrLnuE-',
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': callback
     });
     return false;
   };

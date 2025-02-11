@@ -6,7 +6,26 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://indiangamersnetwork.com/maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-  <script src="../tracking.js"></script>
+  
+  <!-- Event snippet for Page /view conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+  function gtag_report_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-16846923210/ppQfCMv8-JsaEMrLnuE-',
+        'value': 1.0,
+        'currency': 'INR',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>
+  
    <style type="text/css">body {
     background: #ffffff;
     overflow-x:hidden;

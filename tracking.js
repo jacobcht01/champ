@@ -16,3 +16,11 @@ document.addEventListener("DOMContentLoaded", function() {
     height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
     document.body.insertBefore(gtmNoScript, document.body.firstChild);
 });
+
+async src="https://www.googletagmanager.com/gtag/js?id=G-ZSHBXW4HYV"></script>
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-ZSHBXW4HYV');

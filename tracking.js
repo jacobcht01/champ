@@ -5,14 +5,31 @@
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-    })(window,document,'script','dataLayer','GTM-PN32VHXR');`;
+    })(window,document,'script','dataLayer','GTM-TZ7CF89V');`;
     document.head.appendChild(gtmScript);
+})();
+
+(function() {
+    // Insert Google tag (gtag.js) script inside <head>
+    var gtagScript = document.createElement("script");
+    gtagScript.async = true;
+    gtagScript.src = "https://www.googletagmanager.com/gtag/js?id=G-ZSHBXW4HYV";
+    document.head.appendChild(gtagScript);
+
+    var gtagInlineScript = document.createElement("script");
+    gtagInlineScript.innerHTML = `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-ZSHBXW4HYV');
+    `;
+    document.head.appendChild(gtagInlineScript);
 })();
 
 // 2️⃣ Insert Google Tag Manager noscript inside <body>
 document.addEventListener("DOMContentLoaded", function() {
     var gtmNoScript = document.createElement("noscript");
-    gtmNoScript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PN32VHXR"
+    gtmNoScript.innerHTML = `<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TZ7CF89V"
     height="0" width="0" style="display:none;visibility:hidden"></iframe>`;
     document.body.insertBefore(gtmNoScript, document.body.firstChild);
 });

@@ -1,10 +1,25 @@
-// Get Current Year
-function getCurrentYear() {
-    var d = new Date();
-    var year = d.getFullYear();
-    document.querySelector("#displayDateYear").innerText = year;
+// navigation  menu js
+function openNav() {
+    $("#myNav").addClass("menu_width");
+    $(".menu_btn-style").fadeIn();
 }
-getCurrentYear()
+
+function closeNav() {
+    $("#myNav").removeClass("menu_width");
+    $(".menu_btn-style").fadeOut();
+}
+
+
+// get current year
+
+function displayYear() {
+    var d = new Date();
+    var currentYear = d.getFullYear();
+    document.querySelector("#displayYear").innerHTML = currentYear;
+}
+displayYear();
+
+
 
 //client section owl carousel
 $(".owl-carousel").owlCarousel({
@@ -30,6 +45,24 @@ $(".owl-carousel").owlCarousel({
         }
     }
 });
+
+
+// slider carousel control
+
+
+$('.slider_btn_prev').on('click', function (e) {
+    e.preventDefault()
+    $('.slider_text_carousel').carousel('prev')
+    $('.slider_image_carousel').carousel('prev')
+})
+
+
+$('.slider_btn_next').on('click', function (e) {
+    e.preventDefault()
+    $('.slider_text_carousel').carousel('next')
+    $('.slider_image_carousel').carousel('next')
+})
+
 
 /** google_map js **/
 
